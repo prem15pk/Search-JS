@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" 
+    crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" 
+crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.7.0.js" 
+integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM="
+ crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+.hide{
+  display: none;
+}
+  .search{
+    display: flex;
+    justify-content: center;
+  }
+
+  input{
+    width: 100%;
+  }
+  .input-text{
+    border-radius: 5px;
+    border: 2px solid green;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  input:active{
+    border:4px solid red ;
+  }
+
+.container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 500px;
+  width: 80%;
+ 
+}
+.right{
+  display: flex;
+  position: relative;
+}
+
+.img-1{
+  position: absolute;
+  width: 40%;
+  height: 40%;
+  z-index: 2;
+  top: 20%;
+}
+.img-2{
+  width: 40%;
+  height: 40%;
+  position: absolute;
+  /* top: 20%; */
+  right:50%;
+  z-index: 1;
+}
+
+.img-3{
+  width: 50%;
+  height: 40%;
+  position: absolute;
+  top: 20%;
+  right: 30%;
+  z-index: 3;
+}
+  
+.img-1:hover{
+  width: 60%;
+  height: 60%;
+  z-index: 7;
+  padding: 5px;
+  top: 0;
+  border: 10px solid rgb(1, 18, 2);
+  box-sizing: border-box;
+  
+}
+
+.img-2:hover{
+  width: 60%;
+  height: 60%;
+  z-index: 8;
+  top: 0;
+  padding: 5px;
+  border: 10px solid rgb(24, 2, 2);
+  box-sizing: border-box;
+}
+
+.img-3:hover{
+  width: 60%;
+  height: 60%;
+  z-index: 9;
+  padding: 5px;
+  top: 0;
+  border: 10px solid rgb(27, 1, 1);
+  box-sizing: border-box;
+}
+
+</style>
+<body>
+<!-- <ul class="list-items">
+    <li id="item-1" class="items">Apple</li>
+    <li id="item-2" class="items">Orange</li>
+    <li id="item-3" class="items">Mango</li>
+    <li id="item-4" class="items">Banana</li>
+</ul>  -->
+
+<div class="search my-3">
+  <div class="input-searchbar" style="width: 80%;">
+    <input class="p-2 input-text" type="text" placeholder="Enter">
+  </div>
+</div>
+
+<table class="table table-hover">
+        <thead>
+          <tr class="one">
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="two">
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+          </tr>
+          <tr class="three">
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+          </tr>
+          <tr class="four">
+            <th scope="row">3</th>
+            <td colspan="2">Larry the Bird</td>
+            <td>@twitter</td>
+          </tr>
+        </tbody>
+      
+</table>
+
+  
+<div class="container">
+   <div class="left"></div>
+     <div class="right">
+    
+        <img class="img-1" src="https://cdn.worldvectorlogo.com/logos/html-1.svg" alt="">
+        <img class="img-2" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/CSS3_logo_and_wordmark.svg/1200px-CSS3_logo_and_wordmark.svg.png" alt="" >
+        <img class="img-3" src="https://w1.pngwing.com/pngs/136/126/png-transparent-javascript-logo-angularjs-nodejs-computer-programming-web-development-computer-software-jquery-yellow.png"  alt="">
+      
+     </div>
+</div>
+
+</body>
+
+<script>
+  $(`.input-text`).on(`keyup`,()=>{
+
+     var value = $(`.input-text`).val();
+    
+         const tr = document.querySelectorAll(`tr`);
+            tr.forEach(x=>{
+
+               
+           if( x.childNodes[3].innerText !==value){
+            x.classList.add('hide');
+          }
+
+           
+          else{
+            x.classList.remove('hide');
+          }
+          
+         
+         })
+
+        
+  })
+</script>
+<script src="script.js"></script>
+
+</html>
